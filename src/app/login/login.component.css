@@ -1,0 +1,38 @@
+/* Style pour centrer le formulaire de connexion */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #28a745;
+  border-color: #28a745;
+  
+}
+.b{
+  display: flex;           /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+}
+button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.alert {
+  margin-bottom: 20px;
+}

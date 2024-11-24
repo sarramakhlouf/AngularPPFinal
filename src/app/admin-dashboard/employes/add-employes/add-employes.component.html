@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un employé :</h2>
+    </div>
+    <form (ngSubmit)="addEmploye()" #employeForm="ngForm">
+        <!--<div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Employé :</label>
+            <input type="text" [(ngModel)]="newEmployee.idEmploye" name="idEmploye" class="form-control" required #idEmploye="ngModel">
+            <div *ngIf="idEmploye.invalid && idEmploye.touched">
+                <small class="text-danger" *ngIf="idEmploye.errors?.['required']">L'id est requis.</small>
+            </div>
+        </div>-->
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom & Prénom :</label>
+            <input type="text" [(ngModel)]="newEmployee.fullNameEmploye" name="fullNameEmploye" class="form-control" required minlength="2" #fullNameEmploye="ngModel">
+            <div *ngIf="fullNameEmploye.invalid && fullNameEmploye.touched">
+                <small class="text-danger" *ngIf="fullNameEmploye.errors?.['required']">Le nom est requis.</small>
+                <small class="text-danger" *ngIf="fullNameEmploye.errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</small>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Email :</label>
+            <input type="email" [(ngModel)]="newEmployee.emailEmploye" name="emailEmploye" class="form-control" required email #emailEmploye="ngModel">
+            <div *ngIf="emailEmploye.invalid && emailEmploye.touched">
+                <small class="text-danger" *ngIf="emailEmploye.errors?.['required']">L'email est requis.</small>
+                <small class="text-danger" *ngIf="emailEmploye.errors?.['email']">L'email doit être au format valide.</small>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Numéro de téléphone :</label>
+            <input type="tel" [(ngModel)]="newEmployee.numTelEmploye" name="numTelEmploye" class="form-control" required #numTelEmploye="ngModel">
+            <div *ngIf="numTelEmploye.invalid && numTelEmploye.touched">
+                <small class="text-danger" *ngIf="numTelEmploye.errors?.['required']">Le numéro de téléphone est requis.</small>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Date de naissance :</label>
+            <input type="date" [(ngModel)]="newEmployee.dateNaissanceEmploye" name="dateNaissanceEmploye" class="form-control" required #dateNaissanceEmploye="ngModel">
+            <div *ngIf="dateNaissanceEmploye.invalid && dateNaissanceEmploye.touched">
+                <small class="text-danger" *ngIf="dateNaissanceEmploye.errors?.['required']">La date de naissance est requise.</small>
+            </div>
+        </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-success" [disabled]="employeForm.invalid">Ajouter</button>
+        </div>   
+    </form>
+</div>

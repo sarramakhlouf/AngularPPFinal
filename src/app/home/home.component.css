@@ -1,0 +1,94 @@
+/* Style de la page d'accueil */
+.home-content {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.home-content {
+  background-image: url('/assets/images/dcp.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.home-content h1, .home-content p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Style de la classe highlight */
+.highlight {
+  font-size: 3rem;
+  font-weight:700;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #4caf50, #2196f3);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Style de la description */
+.description {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+  font-style: oblique;
+  margin-left: auto;
+  margin-right: auto; /* Centrer la description horizontalement */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center; /* Centrer le texte dans la description */
+}
+
+.description:hover {
+  transform: scale(1.05);
+}
+.welcome-card {
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin-top: 7%;
+  margin-left: 32%;
+  max-width: 600px; /* Limite la largeur de la carte pour un meilleur centrage */
+  transition: transform 0.3s ease;
+}
+.des{
+  text-align: center;
+  font: inherit;
+  font-weight:600;
+}
+button{
+  background-color: #a5e1a7;
+  text-decoration: solid;
+  font-weight:500;
+  align-self: center;
+  justify-content: center;
+}
+.b{
+  display: flex;           /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+}
+button:hover {
+  background-color: #8ecf8b;  /* Change la couleur de fond quand on survole le bouton */
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <div  class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th>Liste des commandes </th>
+        </tr>
+        <tr>
+          <th>ID</th>
+          <th>Nom Client</th>
+          <th>Nom Médicament</th>
+          <th>Montant Total</th>
+          <th>Date Commande</th>
+          <th>Quantité</th>  <!-- Nouvelle colonne pour la quantité -->
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commande of commandes">
+          <td>{{ commande.id }}</td>
+          <td>{{ commande.nomClient }}</td>
+          <td>{{ commande.nomMedicament }}</td>
+          <td>{{ commande.montantTotal | currency }}</td>
+          <td>{{ commande.dateCommande | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ commande.quantite }}</td>  <!-- Affichage de la quantité -->
+          <td>
+            <button class="btn btn-danger" (click)="supprimerCommande(commande.id)">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+  

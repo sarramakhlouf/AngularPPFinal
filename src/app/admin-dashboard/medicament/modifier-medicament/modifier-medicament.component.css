@@ -1,0 +1,53 @@
+/*.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:#f8f9fa;
+*/
+.container {
+    margin-top: 3%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+  }
+  
+  .container h2,
+  .container label {
+    text-align: left;
+   
+  }
+  
+  .container .form-group {
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Champs de saisie */
+  .container input.form-control {
+    width: 100%;
+    height: 35px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Centrer le bouton */
+  .container button.btn-success {
+    display: block;
+    margin: 20px auto 0; /* Centrage horizontal avec marge en haut */
+    width: 150px;        /* Largeur fixe */
+    padding: 8px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;  /* Centrer le texte à l'intérieur */
+  }
+  

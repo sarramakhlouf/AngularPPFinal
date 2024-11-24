@@ -1,0 +1,32 @@
+<div class="login-container">
+  <h2 class="text-center">Connexion</h2>
+
+  <!-- Affichage du message d'erreur si les identifiants sont incorrects -->
+  <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ errorMessage }}
+    <button type="button" class="btn-close" (click)="errorMessage = ''" aria-label="Close"></button>
+  </div>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <!-- Sélection du type d'utilisateur -->
+    <div class="form-group">
+      <label for="userType">Type d'utilisateur</label>
+      <select id="userType" class="form-control" [(ngModel)]="userType" name="userType" required>
+        <option value="" disabled selected>Choisissez un type d'utilisateur</option>
+        <option value="admin">Admin</option>
+        <option value="caissier">Caissier</option>
+      </select>
+    </div>
+    <div class="b">
+    <button type="submit" class="btn btn-primary btn-block">Se connecter</button></div>
+  </form>
+</div>

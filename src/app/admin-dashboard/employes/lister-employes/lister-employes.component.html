@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                <th>Liste des employées </th>
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom & Prénom</th>
+                    <th>Email</th>
+                    <th>Numéro de téléphone</th>
+                    <th>Date de naissance</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let employe of employees">
+                    <tr>
+                        <td>{{employe.idEmploye}}</td>
+                        <td>{{employe.fullNameEmploye}}</td>
+                        <td>{{employe.emailEmploye}}</td>
+                        <td>{{employe.numTelEmploye}}</td>
+                        <td>{{employe.dateNaissanceEmploye| date:'dd/MM/yyyy'}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerEmploye(employe)">Supprimer</a></td>
+                        <td><a class="btn btn-success" (click)="updateEmploye(employe.idEmploye)">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+    <div>
+      <h2>Modifier un médicament :</h2>
+    </div>
+  
+    <form [formGroup]="myForm" (ngSubmit)="modifierMedicament()">
+      <div class="form-group">
+        <label>ID :</label>
+        <input readonly type="number" formControlName="id" class="form-control" readonly />
+        <span *ngIf="myForm.controls['id'].hasError('required') && myForm.controls['id'].touched" class="text-danger">
+          Le id est obligatoire
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label>Nom :</label>
+        <input type="text" formControlName="nom" class="form-control" />
+        <span *ngIf="myForm.controls['nom'].hasError('minlength') && myForm.controls['nom'].touched" class="text-danger">
+          Le nom doit avoir au moins 3 caractères
+        </span>
+        <span *ngIf="myForm.controls['nom'].hasError('required') && myForm.controls['nom'].touched" class="text-danger">
+          Le nom du produit est obligatoire
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label>Code à barre :</label>
+        <input type="text" formControlName="barCode" class="form-control" />
+        <span *ngIf="myForm.controls['barCode'].hasError('required') && myForm.controls['barCode'].touched" class="text-danger">
+          La code à barre est obligatoire
+        </span>
+        <span *ngIf="myForm.get('barCode')?.hasError('cinLength') && myForm.get('barCode')?.touched" class="text-danger">
+          Le code à barre doit contenir 8 chiffres.
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label>Prix :</label>
+        <input type="text" formControlName="prix" class="form-control" />
+        <span *ngIf="myForm.controls['prix'].hasError('required') && myForm.controls['prix'].touched" class="text-danger">
+          Le prix est obligatoire
+        </span>
+      </div>
+  
+      <div class="form-group">
+        <label>Quantité du stock :</label>
+        <input type="text" formControlName="qteS" class="form-control" />
+        <span *ngIf="myForm.controls['qteS'].hasError('required') && myForm.controls['qteS'].touched" class="text-danger">
+          La quantité du stock est obligatoire
+        </span>
+      </div>
+  
+      <div class="mt-2">
+        <button type="submit"  class="btn btn-success" [disabled]="myForm.invalid">
+          Modifier
+        </button>
+      </div>
+    </form>
+  </div>
+  

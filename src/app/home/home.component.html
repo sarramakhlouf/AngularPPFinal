@@ -1,0 +1,27 @@
+<div class="welcome-card">
+    
+  <h1 class="highlight">PharmaPlus</h1>
+  <p class="description">
+    PharmaPlus est une application de gestion moderne pour les pharmacies, facilitant la gestion des médicaments et du personnel pour une efficacité accrue.
+  </p>
+  <p class="des">Connectez-vous pour découvrir toutes nos fonctionnalités adaptées à votre pharmacie.</p>
+
+
+    <!-- Affichage basé sur l'état de la connexion -->
+    <div class="b" *ngIf="!isLoggedIn">
+      <button class="btn btn-green mt-3" routerLink="/login">Se connecter</button>
+    </div>
+
+    <!-- Affichage basé sur le rôle de l'utilisateur -->
+    <div *ngIf="isLoggedIn">
+      <div *ngIf="userRole === 'admin'">
+        <h2>Bienvenue, Administrateur</h2>
+        <p>Voici le tableau de bord de l'administrateur.</p>
+      </div>
+
+      <div *ngIf="userRole === 'user'">
+        <h2>Bienvenue, Utilisateur</h2>
+        <p>Voici le tableau de bord de l'utilisateur.</p>
+      </div>
+    </div>
+  </div>

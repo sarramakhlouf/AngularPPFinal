@@ -1,0 +1,67 @@
+/* app.component.css */
+
+/* Style général de la navbar */
+.navbar {
+  background-color: #4caf50; /* Vert de la pharmacie */
+}
+
+.navbar .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar .navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar .btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Style du bouton Commencer */
+.btn-green {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-green:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Ajout de l'image de fond floue sans affecter le texte */
+:host {
+  display: block;
+  height: 100vh; /* Couvre toute la hauteur de la fenêtre */
+  position: relative; /* Permet de superposer l'image et le texte */
+}
+
+::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('assets/images/dcp.jpg'); /* Votre image de fond */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Applique un flou uniquement à l'image */
+  z-index: -1; /* Place l'image de fond derrière le contenu */
+}
+
+/* S'assurer que le texte et les éléments restent nets */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative; /* Assure que le texte reste au-dessus de l'image */
+  z-index: 1; /* Garder le texte au-dessus de l'image floue */
+}

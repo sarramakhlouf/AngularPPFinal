@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+    <th>Liste des médicaments </th>
+    </tr>
+    <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Prix</th>
+    <th>Code à barre</th>
+    <th>Quantité disponible </th>
+    
+    </tr>
+    </thead>
+    <tbody *ngFor="let medicament of medicaments">
+    <tr >
+    <td>{{medicament.id}}</td>
+    <td>{{medicament.nom}}</td>
+    <td>{{medicament.prix}}</td>
+    <td>{{medicament.barCode}}</td>
+    <td>{{medicament.qteS}}</td>
+
+    <td><a *ngIf="role === 'admin'" class="btn btn-danger" (click)="supprimerMedicament(medicament)"  >Supprimer</a></td>
+    <td><a *ngIf="role === 'admin'" class="btn btn-success" (click)="modifierMedicament(medicament.id)" >Modifier</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+ 

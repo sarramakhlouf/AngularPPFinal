@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Ajouter une Commande</h2>
+  <form [formGroup]="commandeForm" (ngSubmit)="ajouterCommande()">
+    <div class="form-group">
+      <label for="nomClient">Nom Client</label>
+      <input id="nomClient" formControlName="nomClient" class="form-control" />
+      <div *ngIf="commandeForm.get('nomClient')?.invalid && commandeForm.get('nomClient')?.touched" class="text-danger">
+        Le nom du client est requis.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nomMedicament">Nom du Médicament</label>
+      <input id="nomMedicament" formControlName="nomMedicament" class="form-control" />
+      <div *ngIf="commandeForm.get('nomMedicament')?.invalid && commandeForm.get('nomMedicament')?.touched" class="text-danger">
+        Le nom du médicament est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="montantTotal">Montant Total</label>
+      <input id="montantTotal" formControlName="montantTotal" type="number" class="form-control" />
+      <div *ngIf="commandeForm.get('montantTotal')?.invalid && commandeForm.get('montantTotal')?.touched" class="text-danger">
+        Le montant doit être un nombre supérieur à 0.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateCommande">Date Commande</label>
+      <input id="dateCommande" formControlName="dateCommande" type="date" class="form-control" />
+      <div *ngIf="commandeForm.get('dateCommande')?.invalid && commandeForm.get('dateCommande')?.touched" class="text-danger">
+        La date de la commande est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="quantite">Quantité</label>
+      <input id="quantite" formControlName="quantite" type="number" class="form-control" />
+      <div *ngIf="commandeForm.get('quantite')?.invalid && commandeForm.get('quantite')?.touched" class="text-danger">
+        La quantité doit être un nombre supérieur ou égal à 1.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="commandeForm.invalid">Ajouter</button>
+  </form>
+</div>

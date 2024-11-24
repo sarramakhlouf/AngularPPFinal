@@ -1,0 +1,85 @@
+<div class="container">
+    <h2>Modifier l'Employé</h2>
+  
+    <form [formGroup]="myForm" (ngSubmit)="modifierEmploye()">
+      <!-- ID Employé -->
+      <div class="form-group">
+        <label for="idEmploye">ID Employé</label>
+        <input 
+          type="number" 
+          id="idEmploye" 
+          formControlName="idEmploye" 
+          class="form-control" 
+          [readonly]="true" />
+        <div *ngIf="myForm.get('idEmploye')?.invalid && myForm.get('idEmploye')?.touched" class="text-danger">
+          ID employé requis
+        </div>
+      </div>
+  
+      <!-- Email -->
+      <div class="form-group">
+        <label for="emailEmploye">Email</label>
+        <input 
+          type="email" 
+          id="emailEmploye" 
+          formControlName="emailEmploye" 
+          class="form-control" 
+          placeholder="exemple@domaine.com" />
+        <div *ngIf="myForm.get('emailEmploye')?.invalid && myForm.get('emailEmploye')?.touched" class="text-danger">
+          <div *ngIf="myForm.get('emailEmploye')?.errors?.['required']">L'email est requis</div>
+          <div *ngIf="myForm.get('emailEmploye')?.errors?.['email']">L'email n'est pas valide</div>
+        </div>
+      </div>
+  
+      <!-- Nom Complet -->
+      <div class="form-group">
+        <label for="fullNameEmploye">Nom Complet</label>
+        <input 
+          type="text" 
+          id="fullNameEmploye" 
+          formControlName="fullNameEmploye" 
+          class="form-control" 
+          placeholder="Nom Prénom" />
+        <div *ngIf="myForm.get('fullNameEmploye')?.invalid && myForm.get('fullNameEmploye')?.touched" class="text-danger">
+          <div *ngIf="myForm.get('fullNameEmploye')?.errors?.['required']">Le nom complet est requis</div>
+          <div *ngIf="myForm.get('fullNameEmploye')?.errors?.['minlength']">Le nom complet doit contenir au moins 3 caractères</div>
+        </div>
+      </div>
+  
+      <!-- Date de Naissance -->
+      <div class="form-group">
+        <label for="dateNaissanceEmploye">Date de Naissance</label>
+        <input 
+          type="date" 
+          id="dateNaissanceEmploye" 
+          formControlName="dateNaissanceEmploye" 
+          class="form-control" />
+        <div *ngIf="myForm.get('dateNaissanceEmploye')?.invalid && myForm.get('dateNaissanceEmploye')?.touched" class="text-danger">
+          La date de naissance est requise
+        </div>
+      </div>
+  
+      <!-- Numéro de Téléphone -->
+      <div class="form-group">
+        <label for="NumTelEmploye">Numéro de Téléphone</label>
+        <input 
+          type="text" 
+          id="numTelEmploye" 
+          formControlName="numTelEmploye" 
+          class="form-control" 
+          placeholder="Numéro de téléphone" />
+        <div *ngIf="myForm.get('numTelEmploye')?.invalid && myForm.get('numTelEmploye')?.touched" class="text-danger">
+          <div *ngIf="myForm.get('numTelEmploye')?.errors?.['required']">Le numéro de téléphone est requis</div>
+          <div *ngIf="myForm.get('numTelEmploye')?.errors?.['pattern']">Le numéro de téléphone doit être entre 8 et 10 chiffres</div>
+        </div>
+      </div>
+  
+      <!-- Bouton de soumission -->
+      <div class="mt-2">
+        <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+          Modifier
+        </button>
+      </div>
+    </form>
+  </div>
+  
