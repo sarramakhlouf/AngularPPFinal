@@ -21,7 +21,7 @@
           <td>{{ commande.id }}</td>
           <td>{{ commande.nomClient }}</td>
           <td>{{ commande.nomMedicament }}</td>
-          <td>{{ commande.montantTotal | currency }}</td>
+          <td>{{ commande.montantTotal | currency: 'TND':'symbol':'1.2-2' }}</td>
           <td>{{ commande.dateCommande | date: 'dd/MM/yyyy' }}</td>
           <td>{{ commande.quantite }}</td>  <!-- Affichage de la quantité -->
           <td>
